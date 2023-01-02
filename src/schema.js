@@ -22,7 +22,8 @@ export const typeDefs = `#graphql
     title: String!
     author: Author!
     thumbnail: String
-    length: Int
+    length: Int @deprecated(reason: "use durationInSeconds")
+    durationInSeconds: Int
     modulesCount: Int
     description: String
     numberOfViews: Int
@@ -38,7 +39,8 @@ export const typeDefs = `#graphql
   type Module {
     id: ID!
     title: String!
-    length: Int
+    length: Int @deprecated(reason: "use durationInSeconds")
+    durationInSeconds: Int
     content: String
     videoUrl: String
   }
@@ -51,4 +53,4 @@ export const typeDefs = `#graphql
     message: String!
     track: Track
   }
-`
+`;
