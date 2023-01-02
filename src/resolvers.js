@@ -39,13 +39,11 @@ export const resolvers = {
             return dataSources.trackAPI.getTrackModules(id);
         },
         durationInSeconds: ({ length }) => {
-            console.log('durationInSeconds', length)
             return length
         }
     },
     Module: {
         durationInSeconds: ({ length }) => {
-            console.log('durationInSeconds', length)
             return length
         }
     }
