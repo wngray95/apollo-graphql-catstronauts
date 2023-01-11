@@ -13,23 +13,24 @@ export const resolvers = {
     Mutation: {
         incrementTrackViews: async (_, { id }, { dataSources }) => {
             try {
-                const track = await dataSources.trackAPI.incrementTrackViews(id)
+                const track = await dataSources.trackAPI.incrementTrackViews(
+                    id
+                );
                 return {
                     code: 200,
                     success: true,
                     message: `Successfully incremented number of views for track ${id}`,
-                    track
+                    track,
                 };
             } catch (err) {
                 return {
                     code: err.extensions.response.status,
                     success: false,
                     message: err.extensions.response.body,
-                    track: null
-                }
+                    track: null,
+                };
             }
-
-        }
+        },
     },
     Track: {
         author: ({ authorId }, _, { dataSources }) => {
@@ -39,12 +40,12 @@ export const resolvers = {
             return dataSources.trackAPI.getTrackModules(id);
         },
         durationInSeconds: ({ length }) => {
-            return length
-        }
+            return length;
+        },
     },
     Module: {
         durationInSeconds: ({ length }) => {
-            return length
-        }
-    }
+            return length;
+        },
+    },
 };

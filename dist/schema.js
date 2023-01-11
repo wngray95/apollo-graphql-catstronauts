@@ -1,5 +1,7 @@
-export const typeDefs = `#graphql
-
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.typeDefs = void 0;
+exports.typeDefs = `#graphql
   # Operations 
   type Query {
     tracksForHome: [Track!]!
@@ -11,12 +13,7 @@ export const typeDefs = `#graphql
     incrementTrackViews(id: ID!): IncrementTrackViewsResponse!
   }
 
-#   type Subscription {
-
-#   }
-
-  # Data Types
- 
+  # Data Types 
   type Track {
     id: ID!
     title: String!
@@ -46,7 +43,6 @@ export const typeDefs = `#graphql
   }
 
   # Mutation Response Types
-
   type IncrementTrackViewsResponse {
     code: Int!
     success: Boolean!
